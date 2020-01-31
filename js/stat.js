@@ -50,7 +50,7 @@ window.renderStatistics = function (ctx, players, times) {
 
   var randomColor = function () {
     return Math.round(Math.random() * 100);
-  }
+  };
 
   var colorPlayers = function () {
     return players[i] === 'Вы' ? 'rgba(255, 0, 0, 1)' : 'hsl(240, ' + randomColor() + '%, 50%)';
