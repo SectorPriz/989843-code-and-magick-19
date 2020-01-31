@@ -33,7 +33,7 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
-window.renderStatistics = function (ctx, players, times,) {
+window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP_SHADOW, CLOUD_Y + GAP_SHADOW, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
