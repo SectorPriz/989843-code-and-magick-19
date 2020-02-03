@@ -48,19 +48,22 @@ window.renderStatistics = function (ctx, players, times) {
     return Math.round(times[i]);
   };
 
-  var randomColor = function () {
+  /* var randomColor = function () {
     return Math.round(Math.random() * 100);
-  };
+  }; */
 
-  var colorPlayers = function () {
-    return players[i] === 'Вы' ? 'rgba(255, 0, 0, 1)' : 'hsl(240, ' + randomColor() + '%, 50%)';
+  var colorBar = function () {
+    var randomValue = function () {
+      return Math.round(Math.random() * 100);
+    };
+    return players[i] === 'Вы' ? 'rgba(255, 0, 0, 1)' : 'hsl(240, 100%, ' + randomValue() + '%)';
   };
 
   for (var i = 0; i < players.length; i++) {
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], CLOUD_X + TEXT_WIDTH + (TEXT_WIDTH + GAP) * i, CLOUD_Y + TEXT_Y);
     ctx.fillText(time(), CLOUD_X + TEXT_WIDTH + (TEXT_WIDTH + GAP) * i, (CLOUD_Y + TEXT_Y - GAP_TIME) + (barHeight * times[i] / maxTime));
-    ctx.fillStyle = colorPlayers();
+    ctx.fillStyle = colorBar();
     ctx.fillRect(CLOUD_X + TEXT_WIDTH + (TEXT_WIDTH + GAP) * i, CLOUD_Y + TEXT_Y - TEXT_HEIGHT, BAR_WIDTH, barHeight * times[i] / maxTime);
   }
 };
