@@ -14,7 +14,7 @@ var TITLE_TEXT_WIDTH = 15;
 var TITLE_TEXT_HEIGHT = 30;
 var TITLE_GAP_Y = 20;
 var BAR_WIDTH = 40;
-var barHeight = '-' + 150;
+var barHeight = -150;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
