@@ -20,7 +20,7 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 
 var wizards = [
   {
-    name: WIZARD_NAMES[i] + WIZARD_SURNAMES[0],
+    name: WIZARD_NAMES[0] + WIZARD_SURNAMES[0],
     coatColor: WIZARD_COAT_COLOR[1],
     eyesColor: WIZARD_EYES_COLOR[4]
   },
@@ -40,20 +40,6 @@ var wizards = [
     eyesColor: WIZARD_EYES_COLOR[4]
   }
 ];
-
-/* var getMaxElement = function (arr) {
-  var maxElement = arr[0];
-
-  for (var i = 1; i < arr.length; i++) {
-    if (arr[i] > maxElement) {
-      maxElement = arr[i];
-    }
-  }
-
-  return maxElement;
-};
-
-var maxRe = getMaxElement(WIZARD_NAMES); */
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
