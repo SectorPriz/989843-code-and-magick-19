@@ -23,8 +23,8 @@ var generateRandom = function (arr) {
 };
 
 var wizards = [];
-var wizardsMumber = 4;
-for (var i = 0; i < wizardsMumber; i++) {
+var wizardsNumber = 4;
+for (var i = 0; i < wizardsNumber; i++) {
   wizards.push({
     name: generateRandom(WIZARD_NAMES) + ' ' + generateRandom(WIZARD_SURNAMES),
     coatColor: generateRandom(WIZARD_COAT_COLOR),
