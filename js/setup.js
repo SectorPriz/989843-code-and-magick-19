@@ -17,29 +17,20 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
 
+var generateRandom = function (arr) {
+  var rand = Math.floor(Math.random() * arr.length);
+  return arr[rand];
+};
 
-var wizards = [
-  {
-    name: WIZARD_NAMES[0] + WIZARD_SURNAMES[0],
-    coatColor: WIZARD_COAT_COLOR[1],
-    eyesColor: WIZARD_EYES_COLOR[4]
-  },
-  {
-    name: WIZARD_NAMES[0] + WIZARD_SURNAMES[0],
-    coatColor: WIZARD_COAT_COLOR[1],
-    eyesColor: WIZARD_EYES_COLOR[4]
-  },
-  {
-    name: WIZARD_NAMES[0] + WIZARD_SURNAMES[0],
-    coatColor: WIZARD_COAT_COLOR[1],
-    eyesColor: WIZARD_EYES_COLOR[4]
-  },
-  {
-    name: WIZARD_NAMES[0] + WIZARD_SURNAMES[0],
-    coatColor: WIZARD_COAT_COLOR[1],
-    eyesColor: WIZARD_EYES_COLOR[4]
-  }
-];
+var wizards = [];
+var wizardsMumber = 4;
+for (var i = 0; i < wizardsMumber; i++) {
+  wizards.push({
+    name: generateRandom(WIZARD_NAMES) + ' ' + generateRandom(WIZARD_SURNAMES),
+    coatColor: generateRandom(WIZARD_COAT_COLOR),
+    eyesColor: generateRandom(WIZARD_EYES_COLOR)
+  });
+}
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -52,10 +43,12 @@ var renderWizard = function (wizard) {
 };
 
 var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
+for (i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
 
 similarListElement.appendChild(fragment);
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
+
+
